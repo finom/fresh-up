@@ -1,10 +1,15 @@
 const fs = require('fs');
+const watchers = {};
+const watchHandler = (eventType, modulePath) => {
+    if (eventType === 'change') {
+        delete require.cache[modulePath];
+        delete watchers[modulePath];
+        watchers[modulePath].close();
+    }
+};
 
 module.exports = (modulePath) => {
-    const watcher = fs.watch(modulePath, (eventType) => {
-        if (eventType === 'change') {
-            delete require.cache[modulePath];
-            watcher.close();
-        }
-    });
+    if(!watchers[modulePath]) {
+        watchers[modulePath] = fs.watch(modulePath, watchHandler);
+    }
 };
