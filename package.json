@@ -1,0 +1,54 @@
+{
+  "name": "require-hot",
+  "version": "0.0.0",
+  "description": "require wrapper for NodeJS which clears cache of required module when the module file is changed",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint .",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "check-updates": "ncu",
+    "upgrade": "npm run check-updates -- --upgradeAll && npm install",
+    "start": "nodemon index --standalone --ext=.srv.js"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ]
+    },
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finom/require-hot.git"
+  },
+  "keywords": [
+    "require",
+    "cache"
+  ],
+  "author": "Andrey Gubanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finom/require-hot/issues"
+  },
+  "homepage": "https://github.com/finom/require-hot#readme",
+  "devDependencies": {
+    "eslint": "^3.5.0",
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.2.1",
+    "ghooks": "^1.3.2",
+    "npm-check-updates": "^2.8.0",
+    "semantic-release": "^4.3.5",
+    "validate-commit-msg": "^2.8.0"
+  }
+}
