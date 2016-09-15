@@ -2,7 +2,7 @@
 
 > Refreshes NodeJS module when its file is modified
 
-As you know NodeJS caches values returned by ``require`` function. When you call ``require('foo')`` twice or more it returns the same object. **fresh-up** watches and clears cache (``require.cache[moduleName]``) when the file of the module is modified. The only argument is an absolute path to the module.
+As you know NodeJS caches values returned by ``require`` function. When you call ``require('foo')`` twice or more it returns the same object. **fresh-up** watches and clears the cache (via ``delete require.cache[modulePath]``) when the file of the module is modified. The only argument is an absolute path to the module.
 
 ```
 npm install --save fresh-up
@@ -23,5 +23,5 @@ function foo() {
 // foo can be called by any async function
 setInterval(() => {
     foo();
-}, 500)
+}, 500);
 ```
