@@ -1,18 +1,22 @@
-# require-hot
+# fresh-up
 
-> ``require`` wrapper for NodeJS which clears cache of required module when the module file is changed
+> Refreshes NodeJS module when its file is modified
 
-As you know NodeJS caches files values returned by ``require`` function. When you call ``require('foo')`` twice or more it returns the same object. **require-hot** is super-tiny wrapper of ``require`` function which clears cache (``require.cache[moduleName]``) when the file of the module is modified.
+As you know NodeJS caches values returned by ``require`` function. When you call ``require('foo')`` twice or more it returns the same object. **fresh-up** watches and clears cache (``require.cache[moduleName]``) when the file of the module is modified. The only argument is an absolute path to the module.
 
 ```
-npm install --save require-hot
+npm install --save fresh-up
 ```
 
+Example:
 ```js
-const requireHot = require('require-hot');
+const freshUp = require('fresh-up');
+
+// require.resolve returns absolute path to ./bar
+freshUp(require.resolve('./bar'));
 
 function foo() {
-    const bar = requireHot('./bar'); // returns another vale only if ./bar is changed
+    const bar = require('./bar'); // returns another value only if ./bar is changed
     bar();
 }
 

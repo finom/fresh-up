@@ -1,14 +1,13 @@
 {
-  "name": "require-hot",
-  "version": "0.0.0",
-  "description": "require wrapper for NodeJS which clears cache of required module when the module file is changed",
+  "name": "fresh-up",
+  "version": "0.0.0-auto",
+  "description": "Refreshes NodeJS module when its file is modified",
   "main": "index.js",
   "scripts": {
     "test": "eslint .",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "check-updates": "ncu",
-    "upgrade": "npm run check-updates -- --upgradeAll && npm install",
-    "start": "nodemon index --standalone --ext=.srv.js"
+    "upgrade": "npm run check-updates -- --upgradeAll && npm install"
   },
   "config": {
     "validate-commit-msg": {
@@ -28,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finom/require-hot.git"
+    "url": "https://github.com/finom/fresh-up.git"
   },
   "keywords": [
     "require",
@@ -37,9 +36,9 @@
   "author": "Andrey Gubanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/finom/require-hot/issues"
+    "url": "https://github.com/finom/fresh-up/issues"
   },
-  "homepage": "https://github.com/finom/require-hot#readme",
+  "homepage": "https://github.com/finom/fresh-up#readme",
   "devDependencies": {
     "eslint": "^3.5.0",
     "eslint-config-airbnb": "^11.1.0",
