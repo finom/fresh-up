@@ -1,4 +1,4 @@
-# fresh-up
+# fresh-up [![npm version](https://badge.fury.io/js/fresh-up.svg)](https://badge.fury.io/js/fresh-up)
 
 > Refreshes NodeJS module when its file is modified
 
