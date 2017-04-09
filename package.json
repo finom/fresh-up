@@ -6,8 +6,7 @@
   "scripts": {
     "test": "eslint .",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "check-updates": "ncu",
-    "upgrade": "npm run check-updates -- --upgradeAll && npm install"
+    "upgrade": "ncu --upgradeAll && npm install"
   },
   "config": {
     "validate-commit-msg": {
@@ -40,14 +39,14 @@
   },
   "homepage": "https://github.com/finom/fresh-up#readme",
   "devDependencies": {
-    "eslint": "^3.5.0",
-    "eslint-config-airbnb": "^11.1.0",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.2.2",
-    "eslint-plugin-react": "^6.2.1",
-    "ghooks": "^1.3.2",
-    "npm-check-updates": "^2.8.0",
-    "semantic-release": "^4.3.5",
-    "validate-commit-msg": "^2.8.0"
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "ghooks": "^2.0.0",
+    "npm-check-updates": "^2.10.5",
+    "semantic-release": "^6.3.2",
+    "validate-commit-msg": "^2.12.1"
   }
 }
